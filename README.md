@@ -21,7 +21,7 @@ Automated SOC pipeline that detects, routes, and alerts on AWS threats in real-t
 - `Eventbridge-rule.json` - Event pattern
 
 ## Screenshots
-See `/screenshots` folder (or add them here) - Summary, Findings, EventBridge, Lambda, Email, S3
+See `/screenshots` folder  - Summary, Findings, EventBridge, Lambda, Email, S3
 
 ## Cost Control
 Disabled GuardDuty detector after proof. Lambda, SNS, S3 free tier = $0.
