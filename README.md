@@ -25,7 +25,7 @@ Automated pipeline that detects, routes, and alerts on AWS threats in real-time.
 ![EventBridge](Eventbridge.jpeg)
 
 ### 4. Lambda Function
-![Lambda](Lambda-screenshot.jpeg)
+![Lambda](Lambda-screenshort.jpeg)
 
 ### 5. Email Alert Proof
 ![Email](Email-proof.jpg)
