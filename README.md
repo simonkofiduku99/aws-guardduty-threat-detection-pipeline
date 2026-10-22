@@ -7,23 +7,34 @@ Automated SOC pipeline that detects, routes, and alerts on AWS threats in real-t
 
 - **Region:** us-east-1
 - **Account:** 954328706940 (verified in logs)
-- **Buckets:** `guardduty-logs-project5-954328706940-us-east-1-an`, `aws-cloudtrail-logs-...`
+- **Buckets:** `guardduty-logs-project5-954328706940-us-east-1-an`
 
-## Components
-1. **GuardDuty** - Enabled, generated 480 sample findings (Trojan etc.)
-2. **EventBridge** - Rule: `source: aws.guardduty`, `detail-type: GuardDuty Finding`, State: ENABLED
-3. **Lambda** - `lambda_function.py` parses `detail.type`, `severity`, publishes to SNS
-4. **SNS/Email** - Alert with finding JSON delivered to Gmail
-5. **S3** - Archival bucket for logs
+## Code
+- `lambda_function.py` - Parses GuardDuty finding, publishes to SNS
+- `Eventbridge-rule.json` - `source: aws.guardduty`
 
-## Files
-- `lambda_function.py` - Core processing logic
-- `Eventbridge-rule.json` - Event pattern
+## Proof Screenshots
 
-## Screenshots
-See `/screenshots` folder  - Summary, Findings, EventBridge, Lambda, Email, S3
+### 1. GuardDuty Summary (480 findings)
+![GuardDuty Summary](GuardDuty-Summary.jpeg)
+
+### 2. GuardDuty Findings
+![Findings](GuardDuty-Findings.jpeg)
+
+### 3. EventBridge Rule (ENABLED)
+![EventBridge](Eventbridge.jpeg)
+
+### 4. Lambda Function
+![Lambda](Lambda-screenshot.jpeg)
+
+### 5. Email Alert Proof
+![Email](Email-proof.jpg)
+
+### 6. S3 Archiving
+![S3 GuardDuty](S3-GuardDuty-logs.jpeg)
+![S3 CloudTrail](Cloudtrail-s3-logs.jpeg)
 
 ## Cost Control
 Disabled GuardDuty detector after proof. Lambda, SNS, S3 free tier = $0.
 
-Built: Oct 21, 2026
+**Built:** Oct 21, 2026 by Simon Kofi Duku
