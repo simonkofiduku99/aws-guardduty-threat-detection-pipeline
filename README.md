@@ -1,6 +1,6 @@
 # AWS GuardDuty Automated Threat Detection Pipeline
 
-Automated SOC pipeline that detects, routes, and alerts on AWS threats in real-time.
+Automated pipeline that detects, routes, and alerts on AWS threats in real-time.
 
 ## Architecture
 **GuardDuty (480 sample findings) -> EventBridge Rule (Enabled) -> Lambda `guardduty-response-function` + SNS -> Gmail + S3 Archiving**
